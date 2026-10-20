@@ -1,0 +1,30 @@
+{
+  "name": "watcher-loop",
+  "version": "0.1.0",
+  "description": "Runs a watcher command for the life of a Claude Code session and wakes the session only when the watcher reports something",
+  "author": { "name": "MNaqq", "url": "https://github.com/MNaqq" },
+  "homepage": "https://github.com/MNaqq/watcher-loop",
+  "repository": "https://github.com/MNaqq/watcher-loop",
+  "license": "MIT",
+  "keywords": ["watcher", "events", "automation", "background"],
+  "userConfig": {
+    "command": {
+      "type": "string",
+      "title": "Watcher command",
+      "description": "Shell command that blocks until something happens, prints what happened and exits. Runs with sh -c in the session's working directory.",
+      "required": true
+    },
+    "ignore": {
+      "type": "string",
+      "title": "Ignore pattern",
+      "description": "Regular expression; output that matches it opens no turn (for example TIMEOUT|ALREADY RUNNING). Leave empty to report all output.",
+      "default": ""
+    },
+    "lines": {
+      "type": "number",
+      "title": "Lines to report",
+      "description": "How many of the last output lines go into the turn.",
+      "default": 20
+    }
+  }
+}

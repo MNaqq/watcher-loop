@@ -1,0 +1,14 @@
+{
+  "name": "watcher-loop",
+  "description": "watcher-loop: run a watcher command for the life of a Claude Code session and wake the session only when it reports something",
+  "owner": {
+    "name": "MNaqq"
+  },
+  "plugins": [
+    {
+      "name": "watcher-loop",
+      "source": "./",
+      "description": "Runs a watcher command for the life of a Claude Code session and wakes the session only when the watcher reports something"
+    }
+  ]
+}
