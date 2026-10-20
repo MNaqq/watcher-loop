@@ -40,10 +40,10 @@ At the prompt of a Claude Code terminal session:
 
 Answer `y` to add the marketplace, press Enter to pick a scope, then set the **Watcher command** on the setup screen.
 
-From a shell:
+From a shell, setting the command in the same line:
 
 ```
-claude plugin install watcher-loop --marketplace MNaqq/watcher-loop
+claude plugin install watcher-loop --marketplace MNaqq/watcher-loop --config "command=sh ~/bin/wait-for-ci.sh"
 ```
 
 In the desktop app, where `/plugin` does not run: click **+** next to the prompt box, then **Plugins**, **Add marketplace** with `MNaqq/watcher-loop`, then **Add plugin**.
@@ -56,7 +56,7 @@ In the desktop app, where `/plugin` does not run: click **+** next to the prompt
 | `ignore` | A regular expression. Output that matches opens no turn, for example `TIMEOUT\|ALREADY RUNNING`. | empty |
 | `lines` | How many of the last output lines Claude receives. | `20` |
 
-Each setting is also a row in `/config`, and changing one there restarts the mod with the new value.
+Change them later with `/plugin configure watcher-loop@watcher-loop` inside Claude Code.
 
 ## Writing a watcher
 

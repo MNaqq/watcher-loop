@@ -42,7 +42,7 @@ export const register: Register = (on, options) => {
   on('session.start', async ($, e, next) => {
     const started = await next(e)
     if (command === '') {
-      $.ui.status('no watcher command set; set one in /config')
+      $.ui.status('no watcher command set; run /plugin configure watcher-loop@watcher-loop')
       return started
     }
 
